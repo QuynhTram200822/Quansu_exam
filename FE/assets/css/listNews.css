@@ -11,7 +11,7 @@
   font-size: 12px;
   vertical-align: top;
   display: inline-block ;
-  border-bottom: 0.5px solid #cccccc;
+  border-bottom: 0.5px solid #cccccc; 
 }
 .breadcrumb > li > a, .breadcrumb > li > span, .breadcrumb > li.active {
   color: #333333;
