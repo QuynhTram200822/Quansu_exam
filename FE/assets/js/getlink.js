@@ -23,3 +23,4 @@ $('.news-card__item').click(function () {
   }
   return false;
 });
+
