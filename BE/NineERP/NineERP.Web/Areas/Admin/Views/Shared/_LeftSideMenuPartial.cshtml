@@ -8,7 +8,7 @@
                 <li class="menu-title">@Localizer["Navigation"]</li>
 
                 <li>
-                    <a href="/dashboard" class="waves-effect">
+                    <a asp-controller="Dashboard" asp-action="Index" class="waves-effect">
                         <i class="remixicon-dashboard-line"></i>
                         <span> @Localizer["Dashboard"] </span>
                     </a>
@@ -21,9 +21,9 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="/users">@Localizer["Users"]</a></li>
-                        <li><a href="/roles">@Localizer["Roles"]</a></li>
-                        <li><a href="/auditlogs">@Localizer["AuditLogs"]</a></li>
+                        <li><a asp-controller="Users" asp-action="Index">@Localizer["Users"]</a></li>
+                        <li><a asp-controller="Roles" asp-action="Index">@Localizer["Roles"]</a></li>
+                        <li><a asp-controller="AuditLogs" asp-action="Index">@Localizer["AuditLogs"]</a></li>
                     </ul>
                 </li>
 
@@ -34,8 +34,8 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="/generalsettings">@Localizer["GeneralSettings"]</a></li>
-                        <li><a href="/emailsettings">@Localizer["EmailSettings"]</a></li>
+                        <li><a asp-controller="GeneralSettings" asp-action="Index">@Localizer["GeneralSettings"]</a></li>
+                        <li><a asp-controller="EmailSettings" asp-action="Index">@Localizer["EmailSettings"]</a></li>
                     </ul>
                 </li>
 

@@ -43,7 +43,7 @@ var AuditLogController = function () {
 
     function loadData(isPageChanged) {
         $.ajax({
-            url: '/AuditLogs/GetAuditLogsPaging',
+            url: '/admin/AuditLogs/GetAuditLogsPaging',
             type: 'GET',
             data: {
                 Keyword: $('#txtKeyword').val(),
@@ -80,7 +80,7 @@ var AuditLogController = function () {
     function exportExcel() {
         const keyword = $('#txtKeyword').val();
         const action = $('#ddlAction').val();
-        const url = `/AuditLogs/ExportExcel?Keyword=${encodeURIComponent(keyword)}&ActionType=${action}`;
+        const url = `/admin/AuditLogs/ExportExcel?Keyword=${encodeURIComponent(keyword)}&ActionType=${action}`;
         window.location.href = url;
     }
 

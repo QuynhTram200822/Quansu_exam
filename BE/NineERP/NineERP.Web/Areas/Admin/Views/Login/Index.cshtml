@@ -1,17 +1,16 @@
 ﻿@using NineERP.Web.Models.Login
-@using Microsoft.Extensions.Localization
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Translate
 @model LoginViewModel
 @{
     Layout = null;
     var brand = "<a href=\"https://nineplus.com.vn\" target=\"_blank\"><strong>NinePlus Solution., JSC</strong></a>";
-    var footer = string.Format(Localizer["FooterText"].Value, brand);
+    var footer = string.Format(Translate["FooterText"].Value, brand);
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@Localizer["LoginTitle"] - Borderless Business Lab</title>
+    <title>@Translate["LoginTitle"] - Borderless Business Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="~/assets/images/favicon.ico">
 
@@ -33,20 +32,20 @@
                                 <a href="/">
                                     <img src="~/assets/images/logo-light.webp" height="35" alt="logo" />
                                 </a>
-                                <p class="text-muted mb-4 mt-3">@Localizer["LoginSubtitle"]</p>
+                                <p class="text-muted mb-4 mt-3">@Translate["LoginSubtitle"]</p>
                             </div>
 
                             <form id="formLogin" method="post">
                                 <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
                                 <div class="form-group mb-3">
-                                    <label for="username">@Localizer["Username"]</label>
-                                    <input type="text" class="form-control" id="username" name="UserName" placeholder="@Localizer["Username"]" value="@Model?.UserName" />
+                                    <label for="username">@Translate["Username"]</label>
+                                    <input type="text" class="form-control" id="username" name="UserName" placeholder="@Translate["Username"]" value="@Model?.UserName" />
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label for="password">@Localizer["Password"]</label>
+                                    <label for="password">@Translate["Password"]</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="password" name="Password" placeholder="@Localizer["Password"]" />
+                                        <input type="password" class="form-control" id="password" name="Password" placeholder="@Translate["Password"]" />
                                         <span class="input-group-text eye_icon" style="cursor:pointer">
                                             <i class="mdi mdi-eye-outline"></i>
                                         </span>
@@ -56,12 +55,12 @@
                                 <div class="form-group mb-3">
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="checkbox-signin" name="RememberMe">
-                                        <label class="form-check-label" for="checkbox-signin">@Localizer["RememberMe"]</label>
+                                        <label class="form-check-label" for="checkbox-signin">@Translate["RememberMe"]</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group mb-0 text-center">
-                                    <button class="btn btn-primary btn-block" type="submit" id="btnLogin">@Localizer["Login"]</button>
+                                    <button class="btn btn-primary btn-block" type="submit" id="btnLogin">@Translate["Login"]</button>
                                 </div>
                             </form>
                         </div>
@@ -71,7 +70,7 @@
                         <div class="col-12 text-center">
                             <p>
                                 <a asp-controller="ForgotPassword" asp-action="Index" class="text-muted ml-1">
-                                    @Localizer["ForgotPassword"]
+                                    @Translate["ForgotPassword"]
                                 </a>
                             </p>
                         </div> <!-- end col -->
@@ -92,15 +91,15 @@
     <script src="~/admin-app/controllers/login/index.js" asp-append-version="true"></script>
     <script>
         var loginResources = {
-            usernameRequired: '@Localizer["UsernameRequired"]',
-            passwordRequired: '@Localizer["PasswordRequired"]',
-            loginFailed: '@Localizer["LoginFailed"]',
-            loginError: '@Localizer["LoginError"]',
-            loggingIn: '@Localizer["LoggingIn"]',
-            login: '@Localizer["Login"]',
-            UserNameOrPasswordInvalid: '@Localizer["UserNameOrPasswordInvalid"]',
-            LockUser: '@Localizer["LockUser"]',
-            AccountAccess: '@Localizer["AccountAccess"]'
+            usernameRequired: '@Translate["UsernameRequired"]',
+            passwordRequired: '@Translate["PasswordRequired"]',
+            loginFailed: '@Translate["LoginFailed"]',
+            loginError: '@Translate["LoginError"]',
+            loggingIn: '@Translate["LoggingIn"]',
+            login: '@Translate["Login"]',
+            UserNameOrPasswordInvalid: '@Translate["UserNameOrPasswordInvalid"]',
+            LockUser: '@Translate["LockUser"]',
+            AccountAccess: '@Translate["AccountAccess"]'
         };
         var login = new loginController();
         login.initialize();

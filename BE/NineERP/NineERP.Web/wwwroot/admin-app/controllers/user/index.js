@@ -76,7 +76,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/users/Register",
+                url: "/admin/users/Register",
                 contentType: "application/json",
                 data: JSON.stringify({ request: request, origin: base.getOrigin() }),
                 success: function (response) {
@@ -97,7 +97,7 @@
     }
 
     function loadData(isPageChanged) {
-        $.get("/users/GetAllUserPaging", {
+        $.get("/admin/users/GetAllUserPaging", {
             keyword: $('#txtKeyword').val(),
             roleName: $('#ddlRoleName').val(),
             pageSize: base.configs.pageSize,

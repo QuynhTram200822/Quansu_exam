@@ -42,7 +42,7 @@
     var login = function (user, pass) {
         $.ajax({
             type: 'POST',
-            url: '/login/authenticate',
+            url: '/admin/login/authenticate',
             data: {
                 UserName: user,
                 Password: pass,
@@ -51,7 +51,7 @@
             dataType: 'json',
             success: function (res) {
                 if (res.succeeded) {
-                    window.location.href = res.redirectUrl || '/dashboard';
+                    window.location.href = res.redirectUrl || '/admin/dashboard';
                 } else {
                     showToast(loginResources[res.messages] || loginResources.loginFailed, 'error');
                 }

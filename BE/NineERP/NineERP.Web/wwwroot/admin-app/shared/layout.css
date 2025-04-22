@@ -1,78 +1,9 @@
-﻿/* layout.css: Giữ footer cố định, body scroll */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Giữ footer cố định */
-footer.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
-    left: 0;
-}
-
-/* Wrapper để bao quanh table */
-.table-wrapper {
-    position: relative;
-    padding-bottom: 60px; /* Đảm bảo phần dưới không bị che bởi footer */
-    overflow-x: auto; /* Cho phép cuộn ngang nếu bảng rộng */
-}
-
-/* Phần table có thể cuộn */
-.table-responsive {
-    display: block;
-    max-height: calc(100vh - 250px); /* Giới hạn chiều cao của table content, trừ header và footer */
-    overflow-y: auto; /* Cho phép cuộn dọc */
-    width: 100%;
-    overflow-x: auto;
-}
-
-/* Cố định tiêu đề của bảng */
+﻿﻿ /* Cố định tiêu đề của bảng */
 .table thead th {
     position: sticky;
     top: 0;
     background-color: #f8f9fa; /* Màu nền cho tiêu đề table */
     z-index: 5; /* Đảm bảo tiêu đề luôn nằm trên dữ liệu */
-}
-
-/* Đảm bảo card body không bị ảnh hưởng bởi footer */
-.card-body {
-    padding: 0;
-    overflow: hidden; /* Ẩn overflow của card nếu có */
-    height: calc(100vh - 250px); /* Đảm bảo chiều cao card được điều chỉnh */
-}
-/* Đảm bảo card body không bị ảnh hưởng bởi footer */
-.card {
-    padding: 0;
-    overflow: hidden; /* Ẩn overflow của card nếu có */
-    height: calc(100vh - 250px); /* Đảm bảo chiều cao card được điều chỉnh */
-}
-
-/* Điều chỉnh chiều cao của #wrapper và #page-wrapper */
-#wrapper {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-#page-wrapper {
-    flex: 1 0 auto;
-}
-
-/* Điều chỉnh chiều rộng của footer */
-footer.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
 }
 
 /* Điều chỉnh cho phân trang */
@@ -88,8 +19,18 @@ footer.footer {
     cursor: pointer;
 }
 
-.pagination li.active {
-    font-weight: bold;
+    .pagination li.active {
+        font-weight: bold;
+    }
+
+#ddl-show-page + .select2-container {
+    width: 25% !important;
+}
+
+.col-md-auto .form-inline {
+    flex-wrap: nowrap;
+    gap: 1px; /* thêm khoảng cách nếu cần */
+    min-width: 300px; /* hoặc thử 100% nếu muốn full chiều ngang */
 }
 
 .logo-box {
@@ -98,4 +39,33 @@ footer.footer {
 
 .navbar-custom {
     background-color: #2c3e50 !important;
+}
+
+/* Tùy chỉnh Select2 trong Modal */
+.select2-container {
+    width: 100% !important; /* Đảm bảo dropdown có chiều rộng 100% */
+    padding: 0px;
+    color: #6c757d;
+}
+
+.select2-container--default .select2-selection--single {
+    height: calc(1.5em + .9rem + 2px) !important;
+    padding: .45rem .9rem;
+    font-size: .9rem;
+    color: #6c757d;
+    font-weight: 400;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da !important;
+    border-radius: .2rem !important;
+}
+
+.select2-selection__rendered {
+    line-height: 1.5 !important;
+    color: #6c757d !important;
+    padding-left: 0px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 4px !important;
 }

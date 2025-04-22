@@ -24,7 +24,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/roles/add",
+                url: "/admin/roles/add",
                 contentType: "application/json",
                 data: JSON.stringify(request),
                 success: function (response) {
@@ -65,7 +65,7 @@
             $("#hidRoleId").val(roleId);
             $("#hidRoleName").val(roleName);
 
-            $.get("/data/all-permissions", function (allPermissions) {
+            $.get("/admin/data/all-permissions", function (allPermissions) {
                 $.get(`/roles/permissionwithrole?roleName=${roleName}`, function (currentPermissions) {
                     renderPermissionCheckbox(allPermissions, currentPermissions.map(x => x.permission));
                     $("#modal-permission").modal('show');
@@ -82,7 +82,7 @@
                 selectedPermissions.push($(this).val());
             });
 
-            $.post("/roles/savepermission", {
+            $.post("/admin/roles/savepermission", {
                 roleName: roleName,
                 listPermission: selectedPermissions
             }, function (response) {
@@ -112,7 +112,7 @@
     }
 
     function loadData(isPageChanged) {
-        $.get("/roles/getallpaging", {
+        $.get("/admin/roles/getallpaging", {
             keyword: $('#txtKeyword').val(),
             pageSize: base.configs.pageSize,
             pageNumber: base.configs.pageIndex
