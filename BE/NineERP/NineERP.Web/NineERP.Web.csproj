@@ -102,7 +102,7 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
 		<PackageReference Include="Microsoft.Graph" Version="5.72.0" />
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
 		<PackageReference Include="reCAPTCHA.AspNetCore" Version="3.0.10" />
 		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
@@ -118,6 +118,8 @@
 		<ProjectReference Include="..\NineERP.Infrastructure\NineERP.Infrastructure.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="Areas\Admin\Data\" />
+		<Folder Include="Areas\Admin\Models\" />
 		<Folder Include="Logs\" />
 		<Folder Include="Properties\PublishProfiles\" />
 		<Folder Include="Resources\Models\" />

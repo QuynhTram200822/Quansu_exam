@@ -188,8 +188,22 @@ app.UseHangfireDashboard("/hangfire", new DashboardOptions
 });
 
 app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Login}/{action=Index}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "DepartmentDefault",
+    pattern: "khoa/{slug}",
+    defaults: new { controller = "Home", action = "Index" });
+
+app.MapControllerRoute(
+    name: "DepartmentModule",
+    pattern: "khoa/{slug}/{controller}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 app.Run();
