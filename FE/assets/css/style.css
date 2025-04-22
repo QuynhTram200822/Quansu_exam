@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import "./listNews.css";
+@import "./list-news.css";
 @import "./slider.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -442,6 +442,7 @@ a {
 
 .tab-cnt {
   padding: 0 13px;
+  margin-bottom: 20px;
 }
 
 .tabs-ctn ul li {
@@ -615,10 +616,17 @@ a {
   max-height: 96px;
 }
 /* News General */
-.sideBar {
-  border-left: 1px solid #e5e5e5;
-  padding-left:0px;
+@media (min-width: 768px) {
+  .sideBar {
+    /* border-left: 1px solid #e5e5e5; */
+    padding-left:0;
+  }
+  .main-content{
+    padding-right:0;
+
+  }
 }
+
 .sideBar-title {
   background: #e5e5e5;
   border: 1px solid #e5e5e5;
