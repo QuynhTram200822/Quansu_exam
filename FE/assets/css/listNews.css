@@ -1,0 +1,51 @@
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  /* border: 1px solid #f8f8f8; */
+  text-transform: uppercase;
+}
+.breadcrumb > li {
+  background: transparent;
+  padding: 0;
+  font-size: 12px;
+  vertical-align: top;
+  display: inline-block ;
+  border-bottom: 0.5px solid #cccccc;
+}
+.breadcrumb > li > a, .breadcrumb > li > span, .breadcrumb > li.active {
+  color: #333333;
+  background: #f8f8f8;
+  padding: 0 12px;
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  border-right: 1px solid #e5e5e5;
+  position: relative;
+  padding: 0 20px 0 31px;
+}
+.breadcrumb > li > a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  transform: scale(0.707) rotate(45deg);
+  -o-transform: scale(0.707) rotate(45deg);
+  -webkit-transform: scale(0.707) rotate(45deg);
+  z-index: 1;
+  background: #f8f8f8;
+  box-shadow: 1px -1px 0 0 #cccccc;
+}
+.list-news{
+  margin-top: 50px;
+}
+.sideBar-items{
+  border-bottom: 1px dotted #e5e5e5;
+  padding: 12px 12px;
+}
+.sideBar-items a {
+  color: #0a4181;
+  font-size: 14px;
+}

@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import "./listNews.css";
 @import "./slider.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -616,6 +617,7 @@ a {
 /* News General */
 .sideBar {
   border-left: 1px solid #e5e5e5;
+  padding-left:0px;
 }
 .sideBar-title {
   background: #e5e5e5;
