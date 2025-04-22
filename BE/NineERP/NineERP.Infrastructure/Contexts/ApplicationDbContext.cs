@@ -27,7 +27,8 @@ namespace NineERP.Infrastructure.Contexts
         public DbSet<EmailTemplate> EmailTemplates => Set<EmailTemplate>();
         public DbSet<GeneralSetting> GeneralSettings => Set<GeneralSetting>();
         public DbSet<EmailSetting> EmailSettings => Set<EmailSetting>();
-
+        public DbSet<Department> Departments => Set<Department>();
+        
         #endregion
 
         #region SaveChanges + Audit

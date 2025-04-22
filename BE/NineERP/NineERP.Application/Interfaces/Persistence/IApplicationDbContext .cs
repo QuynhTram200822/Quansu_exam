@@ -18,6 +18,7 @@ namespace NineERP.Application.Interfaces.Persistence
         DbSet<EmailTemplate> EmailTemplates { get; }
         DbSet<GeneralSetting> GeneralSettings { get; }
         DbSet<EmailSetting> EmailSettings { get; }
+        DbSet<Department> Departments { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
         Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
     }

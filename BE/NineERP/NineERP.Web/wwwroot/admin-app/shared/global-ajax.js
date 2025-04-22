@@ -12,10 +12,10 @@
         }
 
         $.ajax({
-            url: '/login/logout',
+            url: '/admin/login/logout',
             type: 'GET',
             success: function () {
-                window.location.href = '/login';
+                window.location.href = '/admin/login';
             },
             error: function () {
                 if (typeof $.NotificationApp !== 'undefined') {

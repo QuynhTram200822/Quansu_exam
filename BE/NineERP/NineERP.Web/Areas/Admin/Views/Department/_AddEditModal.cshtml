@@ -1,0 +1,102 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Translate
+<!-- Modal Add New Department -->
+<div class="modal fade" id="modalAddEditDepartment" tabindex="-1" role="dialog" aria-labelledby="modalAddEditDepartmentLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <form id="form-add-department">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddEditDepartmentLabel">Thêm mới Khoa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="@Translate["Close"]">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Tên Khoa <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="Name" placeholder="Nhập tên khoa" required />
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="Email" placeholder="Nhập email" required />
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Số điện thoại <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="PhoneNumber" placeholder="Nhập số điện thoại" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label>Địa chỉ</label>
+                            <input type="text" class="form-control" name="Address" placeholder="Nhập địa chỉ" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Địa chỉ FaceBook</label>
+                            <input type="text" class="form-control" name="FaceBookUrl" placeholder="Nhập địa chỉ facebook" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Địa chỉ Wikipedia</label>
+                            <input type="text" class="form-control" name="WikipediaUrl" placeholder="Nhập địa chỉ wikipedia" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Địa chỉ Youtube</label>
+                            <input type="text" class="form-control" name="YoutubeUrl" placeholder="Nhập địa chỉ Youtube" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label>Hình ảnh Banner</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="image-input" accept="image/*" style="display: none;">
+                                    <label class="custom-file-label" for="image-input">Chọn file ảnh</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="btn-select-image">Chọn ảnh</button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="croppedImage" name="croppedImage" />
+                            <div class="mt-1">
+                                <img id="image-preview" src="~/assets/images/2039x243.svg" alt="Preview" class="img-thumbnail" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">@Translate["Cancel"]</button>
+                    <button type="submit" class="btn btn-primary">@Translate["Save"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Crop Modal -->
+<div class="modal fade" id="crop-modal" tabindex="-1" role="dialog" aria-labelledby="cropModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cropModalLabel">Cắt ảnh</h5>
+                <span id="crop-dimensions" class="ml-2 text-muted small">Kích thước crop: 2039 x 243</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="img-container">
+                    <div id="crop-container" style="max-height: 400px; overflow: hidden;"></div>
+                </div>
+                <div class="mt-2 text-center">
+                    <small class="text-muted">Kéo và điều chỉnh khung để cắt ảnh theo kích thước 2039 x 243</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="crop-cancel">Hủy</button>
+                <button type="button" class="btn btn-primary" id="crop-apply">Áp dụng</button>
+            </div>
+        </div>
+    </div>
+</div>
