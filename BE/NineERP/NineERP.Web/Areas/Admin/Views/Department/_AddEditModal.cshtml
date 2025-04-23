@@ -1,4 +1,6 @@
-﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Translate
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Translate
 <!-- Modal Add New Department -->
 <div class="modal fade" id="modalAddEditDepartment" tabindex="-1" role="dialog" aria-labelledby="modalAddEditDepartmentLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -19,10 +21,10 @@
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="image-input-logo" name="imageLogo" accept="image/*" style="display: none;">
-                                            <label class="custom-file-label" for="image-input-logo">Chọn file ảnh</label>
+                                            <label class="custom-file-label" for="image-input-logo">@Translate["SelectImageFile"]</label>
                                         </div>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="btn-select-image-logo">Chọn ảnh</button>
+                                            <button class="btn btn-outline-secondary" type="button" id="btn-select-image-logo">@Translate["SelectImage"]</button>
                                         </div>
                                     </div>
                                     <input type="hidden" id="croppedImageLogo" name="croppedImageLogo" />
@@ -32,32 +34,32 @@
                                 </div>
                                 <div class="col-md-9" style="padding: 0px !important;">
                                     <div class="form-group col-md-12">
-                                        <label>Tên Khoa <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="name" placeholder="Nhập tên khoa"/>
+                                        <label>@Translate["NameFaculty"]<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="name" placeholder="@Translate["PlaceholderNameFaculty"]" />
                                     </div>
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="form-group col-md-4">
                                                 <label>Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" name="email" placeholder="Nhập email"/>
+                                                <input type="email" class="form-control" name="email" placeholder="@Translate["PlaceholderEmail"]"/>
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label>Số điện thoại <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="phoneNumber" placeholder="Nhập số điện thoại"/>
+                                                <label>@Translate["PhoneNumber"] <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="phoneNumber" placeholder="@Translate["PlaceholderEmail"]" />
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label>Url khoa<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="slug" placeholder="Nhập url khoa" />
+                                                <label>Url<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="slug" placeholder="@Translate["PlaceholderUrl"]" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Địa chỉ 1 <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="address1" placeholder="Nhập địa chỉ 1" />
+                                        <label>@Translate["Address1"] <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address1" placeholder="@Translate["PlaceholderAddress1"]" />
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Địa chỉ 2</label>
-                                        <input type="text" class="form-control" name="address2" placeholder="Nhập địa chỉ 2" />
+                                        <label>@Translate["Address2"]</label>
+                                        <input type="text" class="form-control" name="address2" placeholder="@Translate["PlaceholderAddress2"]" />
                                     </div>
                                 </div>
                             </div>
@@ -66,16 +68,16 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label>Địa chỉ FaceBook</label>
-                            <input type="text" class="form-control" name="faceBookUrl" placeholder="Nhập địa chỉ facebook" />
+                            <label>@Translate["FacebookAddress"]</label>
+                            <input type="text" class="form-control" name="faceBookUrl" placeholder="@Translate["PlaceholderFacebook"]" />
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Địa chỉ Wikipedia</label>
-                            <input type="text" class="form-control" name="wikipediaUrl" placeholder="Nhập địa chỉ wikipedia" />
+                            <label>@Translate["WikipediaAddress"]</label>
+                            <input type="text" class="form-control" name="wikipediaUrl" placeholder="@Translate["PlaceholderWikipedia"]" />
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Địa chỉ Youtube</label>
-                            <input type="text" class="form-control" name="youtubeUrl" placeholder="Nhập địa chỉ Youtube" />
+                            <label>@Translate["YoutubeAddress"]</label>
+                            <input type="text" class="form-control" name="youtubeUrl" placeholder="@Translate["PlaceholderYoutube"]" />
                         </div>
                     </div>
 
@@ -85,10 +87,10 @@
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image-input" name="imageBanner" accept="image/*" style="display: none;">
-                                    <label class="custom-file-label" for="image-input">Chọn file ảnh</label>
+                                    <label class="custom-file-label" for="image-input">@Translate["SelectImageFile"]</label>
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="btn-select-image">Chọn ảnh</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="btn-select-image">@Translate["SelectImage"]</button>
                                 </div>
                             </div>
                             <input type="hidden" id="croppedImage" name="croppedImage" />
@@ -112,8 +114,8 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cropModalLabel">Cắt ảnh</h5>
-                <span id="crop-dimensions" class="ml-2 text-muted small">Kích thước crop: 2039 x 243</span>
+                <h5 class="modal-title" id="cropModalLabel">@Translate["CropImage"]</h5>
+                <span id="crop-dimensions" class="ml-2 text-muted small">@Translate["CropSize"] 2039 x 243</span>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -123,12 +125,12 @@
                     <div id="crop-container" style="max-height: 400px; overflow: hidden;"></div>
                 </div>
                 <div class="mt-2 text-center">
-                    <small class="text-muted">Kéo và điều chỉnh khung để cắt ảnh theo kích thước 2039 x 243</small>
+                    <small class="text-muted">@Translate["NoteCrop"] 2039 x 243</small>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="crop-cancel">Hủy</button>
-                <button type="button" class="btn btn-primary" id="crop-apply">Áp dụng</button>
+                <button type="button" class="btn btn-secondary" id="crop-cancel">@Translate["Cancel"]</button>
+                <button type="button" class="btn btn-primary" id="crop-apply">@Translate["Apply"]</button>
             </div>
         </div>
     </div>
@@ -139,8 +141,8 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cropLogoModalLabel">Cắt ảnh</h5>
-                <span id="crop-logo-dimensions" class="ml-2 text-muted small">Kích thước crop: 250 x 250</span>
+                <h5 class="modal-title" id="cropLogoModalLabel">@Translate["CropImage"]</h5>
+                <span id="crop-logo-dimensions" class="ml-2 text-muted small">@Translate["CropSize"] 250 x 250</span>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -150,12 +152,12 @@
                     <div id="crop-logo-container" style="max-height: 400px; overflow: hidden;"></div>
                 </div>
                 <div class="mt-2 text-center">
-                    <small class="text-muted">Kéo và điều chỉnh khung để cắt ảnh theo kích thước 250 x 250</small>
+                    <small class="text-muted">@Translate["NoteCrop"] 250 x 250</small>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="crop-logo-cancel">Hủy</button>
-                <button type="button" class="btn btn-primary" id="crop-logo-apply">Áp dụng</button>
+                <button type="button" class="btn btn-secondary" id="crop-logo-cancel">@Translate["Cancel"]</button>
+                <button type="button" class="btn btn-primary" id="crop-logo-apply">@Translate["Apply"]</button>
             </div>
         </div>
     </div>

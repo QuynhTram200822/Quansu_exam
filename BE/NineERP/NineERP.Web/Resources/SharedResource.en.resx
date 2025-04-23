@@ -117,11 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
   <data name="AddFail" xml:space="preserve">
     <value>Create failed</value>
   </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Address 1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Address 2</value>
+  </data>
   <data name="AddSuccess" xml:space="preserve">
     <value>Create success</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CropImage" xml:space="preserve">
+    <value>Crop image</value>
+  </data>
+  <data name="CropSize" xml:space="preserve">
+    <value>Crop size:</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
   </data>
   <data name="DeleteFail" xml:space="preserve">
     <value>Delete failed</value>
@@ -129,11 +159,74 @@
   <data name="DeleteSuccess" xml:space="preserve">
     <value>Delete successful</value>
   </data>
+  <data name="FacebookAddress" xml:space="preserve">
+    <value>Facebook Address</value>
+  </data>
+  <data name="Faculty" xml:space="preserve">
+    <value>Faculty</value>
+  </data>
+  <data name="FacultyManagement" xml:space="preserve">
+    <value>Faculty Management</value>
+  </data>
   <data name="InvalidInput" xml:space="preserve">
     <value>Invalid input</value>
   </data>
+  <data name="NameFaculty" xml:space="preserve">
+    <value>Name faculty</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoteCrop" xml:space="preserve">
+    <value>Drag and adjust the frame to crop the photo to size</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>No data found</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="PlaceholderAddress1" xml:space="preserve">
+    <value>Enter address 2</value>
+  </data>
+  <data name="PlaceholderAddress2" xml:space="preserve">
+    <value>Enter address 1</value>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>Enter email</value>
+  </data>
+  <data name="PlaceholderFacebook" xml:space="preserve">
+    <value>Enter facebook address</value>
+  </data>
+  <data name="PlaceholderNameFaculty" xml:space="preserve">
+    <value>Enter faculty name</value>
+  </data>
+  <data name="PlaceholderPhoneNo" xml:space="preserve">
+    <value>Enter phone number</value>
+  </data>
+  <data name="PlaceholderSearchFaculty" xml:space="preserve">
+    <value>Faculty name, url...</value>
+  </data>
+  <data name="PlaceholderUrl" xml:space="preserve">
+    <value>Enter url</value>
+  </data>
+  <data name="PlaceholderWikipedia" xml:space="preserve">
+    <value>Enter wikipedia address</value>
+  </data>
+  <data name="PlaceholderYoutube" xml:space="preserve">
+    <value>Enter Youtube address</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelectImage" xml:space="preserve">
+    <value>Select image</value>
+  </data>
+  <data name="SelectImageFile" xml:space="preserve">
+    <value>Select image file</value>
   </data>
   <data name="UpdateFail" xml:space="preserve">
     <value>Update failed</value>
@@ -143,5 +236,11 @@
   </data>
   <data name="UrlAlreadyExists" xml:space="preserve">
     <value>Url already exists</value>
+  </data>
+  <data name="WikipediaAddress" xml:space="preserve">
+    <value>Wikipedia address</value>
+  </data>
+  <data name="YoutubeAddress" xml:space="preserve">
+    <value>Youtube address</value>
   </data>
 </root>

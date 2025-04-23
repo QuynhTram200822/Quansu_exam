@@ -117,11 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Chức năng</value>
+  </data>
   <data name="AddFail" xml:space="preserve">
     <value>Tạo không thành công</value>
   </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Địa chỉ 1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Địa chỉ 2</value>
+  </data>
   <data name="AddSuccess" xml:space="preserve">
     <value>Tạo thành công</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Áp dụng</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Trở về</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="CropImage" xml:space="preserve">
+    <value>Cắt ảnh</value>
+  </data>
+  <data name="CropSize" xml:space="preserve">
+    <value>Kích thước cắt ảnh:</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Bảng tin</value>
   </data>
   <data name="DeleteFail" xml:space="preserve">
     <value>Xóa không thành công</value>
@@ -129,11 +159,74 @@
   <data name="DeleteSuccess" xml:space="preserve">
     <value>Xóa thành công</value>
   </data>
+  <data name="FacebookAddress" xml:space="preserve">
+    <value>Địa chỉ FaceBook</value>
+  </data>
+  <data name="Faculty" xml:space="preserve">
+    <value>Khoa</value>
+  </data>
+  <data name="FacultyManagement" xml:space="preserve">
+    <value>Quản lý Khoa</value>
+  </data>
   <data name="InvalidInput" xml:space="preserve">
     <value>Đầu vào không hợp lệ</value>
   </data>
+  <data name="NameFaculty" xml:space="preserve">
+    <value>Tên khoa</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoteCrop" xml:space="preserve">
+    <value>Kéo và điều chỉnh khung để cắt ảnh theo kích thước</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>Không tìm thấy dữ liệu.</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="PlaceholderAddress1" xml:space="preserve">
+    <value>Nhập địa chỉ 1</value>
+  </data>
+  <data name="PlaceholderAddress2" xml:space="preserve">
+    <value>Nhập địa chỉ 2</value>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>Nhập email</value>
+  </data>
+  <data name="PlaceholderFacebook" xml:space="preserve">
+    <value>Nhập địa chỉ facebook</value>
+  </data>
+  <data name="PlaceholderNameFaculty" xml:space="preserve">
+    <value>Nhập tên khoa</value>
+  </data>
+  <data name="PlaceholderPhoneNo" xml:space="preserve">
+    <value>Nhập số điện thoại</value>
+  </data>
+  <data name="PlaceholderSearchFaculty" xml:space="preserve">
+    <value>Tên khoa, url...</value>
+  </data>
+  <data name="PlaceholderUrl" xml:space="preserve">
+    <value>Nhập url</value>
+  </data>
+  <data name="PlaceholderWikipedia" xml:space="preserve">
+    <value>Nhập địa chỉ wikipedia</value>
+  </data>
+  <data name="PlaceholderYoutube" xml:space="preserve">
+    <value>Nhập địa chỉ Youtube</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="SelectImage" xml:space="preserve">
+    <value>Chọn ảnh</value>
+  </data>
+  <data name="SelectImageFile" xml:space="preserve">
+    <value>Chọn file ảnh</value>
   </data>
   <data name="UpdateFail" xml:space="preserve">
     <value>Cập nhật thất bại</value>
@@ -143,5 +236,11 @@
   </data>
   <data name="UrlAlreadyExists" xml:space="preserve">
     <value>Url đã tồn tại</value>
+  </data>
+  <data name="WikipediaAddress" xml:space="preserve">
+    <value>Địa chỉ Wikipedia</value>
+  </data>
+  <data name="YoutubeAddress" xml:space="preserve">
+    <value>Địa chỉ Youtube</value>
   </data>
 </root>
