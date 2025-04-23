@@ -21,7 +21,11 @@ using NineERP.Infrastructure.Services.SecurityStamp;
 using reCAPTCHA.AspNetCore;
 using Serilog;
 using System.Globalization;
+using FluentValidation;
+using NineERP.Application.Dtos.Department;
+using NineERP.Application.Validator;
 using NineERP.Web.Authorization;
+using NineERP.Web.Services;
 using CurrentUserService = NineERP.Infrastructure.Services.Identity.CurrentUserService; // 🧠 QUAN TRỌNG
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,7 +69,8 @@ services.AddRecaptcha(options => configuration.GetSection("Recaptcha").Bind(opti
 
 // 🗃️ EF Core + Identity
 services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+        .EnableSensitiveDataLogging());
 
 services.AddIdentity<AppUser, AppRole>(options =>
 {
@@ -138,12 +143,14 @@ services.AddSession(options =>
 });
 
 // 📦 App services
+services.AddScoped<ILocalizationService, LocalizationService>();
 services.AddScoped<IDatabaseSeeder, DatabaseSeeder>();
 services.AddScoped<ICurrentUserService, CurrentUserService>();
 services.AddScoped<CurrentUserService>();
 services.AddScoped<IDateTimeService, DateTimeService>();
 services.AddScoped<ITokenService, IdentityService>();
 services.AddScoped<IEmailService, EmailService>();
+services.AddScoped<IValidator<DepartmentRequestDto>, DepartmentRequestDtoValidator>();
 services.AddScoped<IAuditLogService, AuditLogService>();
 services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 services.AddScoped<SecurityStampCacheService>();

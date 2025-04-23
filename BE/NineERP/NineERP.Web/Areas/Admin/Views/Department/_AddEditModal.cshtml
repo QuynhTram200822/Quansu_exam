@@ -12,46 +12,79 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Tên Khoa <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="Name" placeholder="Nhập tên khoa" required />
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label>Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" name="Email" placeholder="Nhập email" required />
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label>Số điện thoại <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="PhoneNumber" placeholder="Nhập số điện thoại" required />
-                        </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label>Địa chỉ</label>
-                            <input type="text" class="form-control" name="Address" placeholder="Nhập địa chỉ" />
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Logo <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="image-input-logo" name="imageLogo" accept="image/*" style="display: none;">
+                                            <label class="custom-file-label" for="image-input-logo">Chọn file ảnh</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="btn-select-image-logo">Chọn ảnh</button>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="croppedImageLogo" name="croppedImageLogo" />
+                                    <div class="mt-1">
+                                        <img id="image-preview-logo" src="~/assets/images/250x250.svg" alt="Preview" class="img-thumbnail" />
+                                    </div>
+                                </div>
+                                <div class="col-md-9" style="padding: 0px !important;">
+                                    <div class="form-group col-md-12">
+                                        <label>Tên Khoa <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="name" placeholder="Nhập tên khoa"/>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="form-group col-md-4">
+                                                <label>Email <span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control" name="email" placeholder="Nhập email"/>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Số điện thoại <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="phoneNumber" placeholder="Nhập số điện thoại"/>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Url khoa<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="slug" placeholder="Nhập url khoa" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Địa chỉ 1 <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address1" placeholder="Nhập địa chỉ 1" />
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Địa chỉ 2</label>
+                                        <input type="text" class="form-control" name="address2" placeholder="Nhập địa chỉ 2" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label>Địa chỉ FaceBook</label>
-                            <input type="text" class="form-control" name="FaceBookUrl" placeholder="Nhập địa chỉ facebook" />
+                            <input type="text" class="form-control" name="faceBookUrl" placeholder="Nhập địa chỉ facebook" />
                         </div>
                         <div class="form-group col-md-4">
                             <label>Địa chỉ Wikipedia</label>
-                            <input type="text" class="form-control" name="WikipediaUrl" placeholder="Nhập địa chỉ wikipedia" />
+                            <input type="text" class="form-control" name="wikipediaUrl" placeholder="Nhập địa chỉ wikipedia" />
                         </div>
                         <div class="form-group col-md-4">
                             <label>Địa chỉ Youtube</label>
-                            <input type="text" class="form-control" name="YoutubeUrl" placeholder="Nhập địa chỉ Youtube" />
+                            <input type="text" class="form-control" name="youtubeUrl" placeholder="Nhập địa chỉ Youtube" />
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label>Hình ảnh Banner</label>
+                            <label>Banner <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="image-input" accept="image/*" style="display: none;">
+                                    <input type="file" class="custom-file-input" id="image-input" name="imageBanner" accept="image/*" style="display: none;">
                                     <label class="custom-file-label" for="image-input">Chọn file ảnh</label>
                                 </div>
                                 <div class="input-group-append">
@@ -67,14 +100,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">@Translate["Cancel"]</button>
-                    <button type="submit" class="btn btn-primary">@Translate["Save"]</button>
+                    <button type="button" class="btn btn-primary" id="btn-save-department">@Translate["Save"]</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Crop Modal -->
+<!-- Crop Modal Banner -->
 <div class="modal fade" id="crop-modal" tabindex="-1" role="dialog" aria-labelledby="cropModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
@@ -96,6 +129,33 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="crop-cancel">Hủy</button>
                 <button type="button" class="btn btn-primary" id="crop-apply">Áp dụng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Crop Modal Logo -->
+<div class="modal fade" id="crop-logo-modal" tabindex="-1" role="dialog" aria-labelledby="cropLogoModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cropLogoModalLabel">Cắt ảnh</h5>
+                <span id="crop-logo-dimensions" class="ml-2 text-muted small">Kích thước crop: 250 x 250</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="img-container">
+                    <div id="crop-logo-container" style="max-height: 400px; overflow: hidden;"></div>
+                </div>
+                <div class="mt-2 text-center">
+                    <small class="text-muted">Kéo và điều chỉnh khung để cắt ảnh theo kích thước 250 x 250</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="crop-logo-cancel">Hủy</button>
+                <button type="button" class="btn btn-primary" id="crop-logo-apply">Áp dụng</button>
             </div>
         </div>
     </div>

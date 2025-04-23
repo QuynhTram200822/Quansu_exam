@@ -24,7 +24,7 @@
     <link href="~/assets/css/icons.min.css" rel="stylesheet" />
     <link href="~/assets/css/app.min.css" rel="stylesheet" />
     <link href="~/assets/libs/toastr/toastr.min.css" rel="stylesheet" />
-    <link href="~/admin-app/shared/layout.css" rel="stylesheet" />
+    <link href="~/admin-app/shared/layout.css" rel="stylesheet" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
@@ -58,9 +58,10 @@
 
     <script src="~/assets/js/jquery.min.js"></script>
     <script src="~/assets/js/vendor.min.js"></script>
+    <script src="~/assets/libs/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/assets/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <!-- Sweet Alerts js -->
     <script src="~/assets/libs/sweetalert2/sweetalert2.min.js"></script>
-    <!-- Sweet alert init js -->
     <script src="~/assets/js/pages/sweet-alerts.init.js"></script>
 
     <script src="~/assets/js/app.min.js"></script>
@@ -94,5 +95,5 @@
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)
-    </body>
+</body>
 </html>

@@ -781,7 +781,7 @@ a {
 	font-size: 21px !important;
 }
 @media (max-width: 992px) {
-  .tab-cnt.list-view .news-card__leading .news-card__title a {
+	.tab-cnt.list-view .news-card__leading .news-card__title a {
     font-size: 16px !important;
 }
 }

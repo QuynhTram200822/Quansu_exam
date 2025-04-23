@@ -1,11 +1,12 @@
-﻿using NineERP.Domain.Entities.Base;
+﻿using NineERP.Application.Request;
 
-namespace NineERP.Domain.Entities
+namespace NineERP.Application.Dtos.Department
 {
-    public class Department : AuditableBaseEntity<short>
+    public class DepartmentRequestDto
     {
+        public short Id { get; set; }
         public string Name { get; set; } = default!;
-        public string Slug  { get; set; } = default!;
+        public string Slug { get; set; } = default!;
         public string? Description { get; set; }
         public string? LogoUrl { get; set; }
         public string? BannerUrl { get; set; }
@@ -16,5 +17,10 @@ namespace NineERP.Domain.Entities
         public string? FaceBookUrl { get; set; }
         public string? WikipediaUrl { get; set; }
         public string? YoutubeUrl { get; set; }
+    }
+
+    public class DepartmentFilterDto : RequestParameter
+    {
+
     }
 }

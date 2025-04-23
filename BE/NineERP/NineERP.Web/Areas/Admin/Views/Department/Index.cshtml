@@ -1,5 +1,5 @@
-﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Translate
-
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Translate
 @{
     ViewData["Title"] = "Quản lý Khoa";
     var breadcrumb = new List<(string Text, string Url)>
@@ -57,6 +57,16 @@
             margin-top: 10px;
         }
 
+        #image-preview-logo {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
         /* Thêm style cho thông tin kích thước */
         #crop-dimensions {
             font-size: 0.85rem;
@@ -71,8 +81,6 @@
 }
 
 @section Scripts {
-  
-
     <script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <script src="~/admin-app/controllers/department/index.js" asp-append-version="true"></script>
@@ -131,17 +139,17 @@
             <div class="row">
                 <div class="col-lg-8">
                     <form class="form-inline" id="form-filter">
-                        <div class="form-group mb-2 mr-2">
+                        <div class="form-group col-md-6 mr-2">
                             <label class="sr-only" for="txtKeyword">Search</label>
-                            <input type="text" id="txtKeyword" class="form-control" placeholder="Tên khoa">
+                            <input type="text" id="txtKeyword" class="form-control col-md-12" placeholder="Tên khoa">
                         </div>
-                        <button type="button" id="btn-search" class="btn btn-primary mb-2">
+                        <button type="button" id="btn-search" class="btn btn-primary">
                             <i class="mdi mdi-magnify mr-1"></i> @Translate["Search"]
                         </button>
                     </form>
                 </div>
                 <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
-                    <button type="button" class="btn btn-danger waves-effect waves-light float-right mb-3" id="btn-add-department">
+                    <button type="button" class="btn btn-danger waves-effect waves-light float-right" id="btn-add-department">
                         <i class="mdi mdi-plus-circle mr-1"></i> @Translate["Add New"]
                     </button>
 
@@ -183,7 +191,7 @@
         <td>{{Email}}</td>
         <td>{{{Url}}}</td>
         <td class="text-center">
-            <a href="#" class="btn btn-xs btn-info btn-edit" data-id="{{Id}}" data-name="{{Name}}"><i class="mdi mdi-shield-account"></i></a>
+            <a href="#" class="btn btn-xs btn-info btn-edit" data-id="{{Id}}" data-name="{{Name}}"><i class="fe-edit-2"></i></a>
             <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete"><i class="fe-trash-2"></i></a>
         </td>
     </tr>
