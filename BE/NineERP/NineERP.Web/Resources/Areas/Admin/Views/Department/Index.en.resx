@@ -201,4 +201,7 @@
   <data name="AddDepartmentTitle" xml:space="preserve">
     <value>Add new Faculty</value>
   </data>
+  <data name="UpdateDepartmentTitle" xml:space="preserve">
+    <value>Update Faculty</value>
+  </data>
 </root>

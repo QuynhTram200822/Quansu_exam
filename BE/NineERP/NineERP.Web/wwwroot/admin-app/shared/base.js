@@ -56,6 +56,14 @@ const base = {
         return date.toLocaleString('vi-VN');
     },
 
+    startLoadingOverlay() {
+        $('#modal-loading-overlay').addClass('active');
+        $('#modal-form-content').css('opacity', '0.5');
+    },
+    stopLoadingOverlay() {
+        $('#modal-loading-overlay').removeClass('active');
+        $('#modal-form-content').css('opacity', '1');
+    },
     startLoading() {
         $('.dv-loading').removeClass('hide');
     },

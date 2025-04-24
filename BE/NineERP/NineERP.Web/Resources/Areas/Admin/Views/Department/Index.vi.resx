@@ -201,4 +201,7 @@
   <data name="AddDepartmentTitle" xml:space="preserve">
     <value>Thêm mới Khoa</value>
   </data>
+  <data name="UpdateDepartmentTitle" xml:space="preserve">
+    <value>Cập nhật khoa</value>
+  </data>
 </root>

@@ -77,8 +77,6 @@
                                     width: canvasData.width,
                                     height: canvasData.width * (2039 / 243)
                                 });
-                                // Thông báo cho người dùng biết về kích thước crop
-                                $('#crop-dimensions').text(localization.notificationCrop + ' 2039 x 243');
                             }
                         });
                     }, 300);
@@ -206,8 +204,6 @@
                                     width: canvasData.width,
                                     height: canvasData.width * (2039 / 243)
                                 });
-                                // Thông báo cho người dùng biết về kích thước crop
-                                $('#crop-logo-dimensions').text(localization.notificationCrop + '  250 x 250');
                             }
                         });
                     }, 300);
@@ -293,8 +289,18 @@
         $('#btn-add-department').on('click', function () {
             clearForm();
             $('#modalAddEditDepartment').find('.modal-title').text(localization.addDepartment);
-            $("#modalAddEditDepartment").validate().resetForm();
             $('#modalAddEditDepartment').modal('show');
+        });
+
+        // Handle edit department click
+        $('#tbl-content').on('click', '.btn-edit-department', function (e) {
+            e.preventDefault()
+            var id = $(this).data('id');
+            clearForm();
+            $('#modalAddEditDepartment').find('.modal-title').text(localization.updateDepartment);
+            $('#modalAddEditDepartment').modal('show');
+            base.startLoadingOverlay();
+            loadDetail(id);
         });
 
         $('#btn-save-department').on('click', function (e) {
@@ -302,9 +308,8 @@
             if (!$('#form-add-department').valid()) {
                 return;
             }
-
             var formData = {
-                id: 0,
+                id: $('[name="hidId"]').val(),
                 name: $('[name="name"]').val(),
                 slug: $('[name="slug"]').val(),
                 email: $('[name="email"]').val(),
@@ -317,13 +322,19 @@
                 logoUrl: $('#croppedImageLogo').val(),
                 bannerUrl: $('#croppedImage').val(),
             };
+            var urlAjax = '/admin/department/add';
+            // Check url ajax
+            if (formData.id != 0) {
+                urlAjax = '/admin/department/update';
+            }
 
             $.ajax({
-                url: '/admin/department/add',
+                url: urlAjax,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
                 beforeSend: function () {
+                    base.startLoadingOverlay();
                     $('#btn-save-department').prop('disabled', true).text(localization.saving);
                 },
                 success: function (response) {
@@ -331,6 +342,7 @@
                         base.notify(response.messages, 'success');
                         $('#modalAddEditDepartment').modal('hide');
                         $('#form-add-department')[0].reset();
+                        loadData();
                     } else {
                         base.notify(response.messages, 'error');
                     }
@@ -340,11 +352,34 @@
                 },
                 complete: function () {
                     $('#btn-save-department').prop('disabled', false).text(localization.save);
+                    base.stopLoadingOverlay();
                 }
             });
 
         });
         //#endregion Handle Add/Edit Department
+
+        //#region Handle Delete Department
+        // Handle delete department click
+        $('#tbl-content').on('click', '.btn-delete-department', function (e) {
+            const id = $(this).data('id');
+            Swal.fire({
+                title: localization.confirmDeleteTitle,
+                text: localization.confirmDeleteText,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: localization.yes,
+                cancelButtonText: localization.noButton
+            }).then(result => {
+                if (result.value) {
+                    $.post("/admin/department/delete", { id }, function (response) {
+                        base.notify(response.messages[0], response.succeeded ? 'success' : 'error');
+                        if (response.succeeded) loadData(true);
+                    });
+                }
+            });
+        });
+        //#endregion
     }
 
     //#region Custom validation method for slug
@@ -499,12 +534,12 @@
                     $('#tbl-content').html(render);
                     base.wrapPaging(response.totalCount, loadData, isPageChanged);
                 } else {
-                    $('#tbl-content').html('<tr><td colspan="6" class="text-center text-muted">Không tìm thấy kết quả.</td></tr>');
+                    $('#tbl-content').html('<tr><td colspan="6" class="text-center text-muted">' + localization.noResultsFound +'</td></tr>');
                     base.wrapPaging(1, loadData, isPageChanged);
                 }
             },
-            error: function (xhr, status, error) {
-                $('#tbl-content').html('<tr><td colspan="6" class="text-center text-danger">Không thể tải dữ liệu. Vui lòng thử lại.</td></tr>');
+            error: function () {
+                $('#tbl-content').html('<tr><td colspan="6" class="text-center text-danger">' + localization.unableToLoadDataPleaseTryAgain +'</td></tr>');
                 base.wrapPaging(1, loadData, isPageChanged);
             },
             complete: function () {
@@ -514,8 +549,51 @@
     }
     //#endregion Load Data
 
+    //#region Handle Function Load detail
+    function loadDetail(id) {
+        $.ajax({
+            url: "/admin/department/getById",
+            method: "GET",
+            data: { id: id },
+            dataType: "json",
+            beforeSend: function () {
+                base.startLoading();
+            },
+            success: function (response) {
+                var data = response.data;
+                $('[name="hidId"]').val(data.id);
+                $('[name="name"]').val(data.name);
+                $('[name="slug"]').val( data.slug);
+                $('[name="email"]').val(data.email);
+                $('[name="phoneNumber"]').val(data.phoneNumber);
+                $('[name="address1"]').val(data.address1);
+                $('[name="address2"]').val(data.address2);
+                $('[name="faceBookUrl"]').val(data.faceBookUrl);
+                $('[name="wikipediaUrl"]').val(data.wikipediaUrl);
+                $('[name="youtubeUrl"]').val(data.youtubeUrl);
+                $('#croppedImageLogo').val(data.logoUrl);
+                $('#image-preview-logo').attr('src', data.logoUrl);
+                $('#croppedImage').val(data.bannerUrl);
+                $('#image-preview').attr('src', data.bannerUrl);
+
+                base.stopLoadingOverlay();
+            },
+            error: function () {
+                base.notify(localization.notificationErrorAjax, 'error');
+            },
+            complete: function () {
+                base.stopLoading();
+            }
+        });
+    }
+    //#endregion
+
     //#region Handle Functions clear form
     function clearForm() {
+        // Clear validation errors
+        $("#modalAddEditDepartment").validate().resetForm();
+        // Clear data in the form
+        $("#form-add-department")[0].reset();
         clearCrop();
         clearCropLogo();
     }

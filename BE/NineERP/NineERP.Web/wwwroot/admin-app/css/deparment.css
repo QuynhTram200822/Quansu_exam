@@ -1,0 +1,62 @@
+﻿/* CSS để xử lý tỉ lệ rộng */
+.cropper-container {
+    max-width: 100% !important;
+}
+
+#crop-container {
+    height: 400px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+    #crop-container img {
+        max-width: 100%;
+        display: block;
+    }
+
+/* Điều chỉnh kích thước của cropper view */
+.cropper-view-box {
+    outline: 1px solid #fff;
+    outline-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Làm cho thanh công cụ cropper dễ nhìn hơn */
+.cropper-point {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(49, 170, 222, 0.75);
+}
+
+/* Hiển thị ảnh preview tốt hơn */
+#image-preview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#image-preview-logo {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Thêm style cho thông tin kích thước */
+#crop-dimensions {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.custom-file-label::after {
+    content: none !important;
+}

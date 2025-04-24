@@ -75,3 +75,13 @@ label.error {
     padding: 0px !important;
     margin: 0px !important;
 }
+
+#modal-loading-overlay {
+    background: rgba(255, 255, 255, 0.7);
+    display: none !important;
+    z-index: 10;
+}
+
+    #modal-loading-overlay.active {
+        display: flex !important;
+    }

@@ -65,8 +65,8 @@
             $("#hidRoleId").val(roleId);
             $("#hidRoleName").val(roleName);
 
-            $.get("/admin/data/all-permissions", function (allPermissions) {
-                $.get(`/roles/permissionwithrole?roleName=${roleName}`, function (currentPermissions) {
+            $.get("/admin/roles/getAllPermissions", function (allPermissions) {
+                $.get(`/admin/roles/permissionwithrole?roleName=${roleName}`, function (currentPermissions) {
                     renderPermissionCheckbox(allPermissions, currentPermissions.map(x => x.permission));
                     $("#modal-permission").modal('show');
                 });
