@@ -117,136 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Action" xml:space="preserve">
-    <value>Chức năng</value>
+  <data name="Slug_Required" xml:space="preserve">
+    <value>Please enter a URL.</value>
   </data>
-  <data name="AddFail" xml:space="preserve">
-    <value>Tạo không thành công</value>
+  <data name="Slug_MinLength" xml:space="preserve">
+    <value>URL must be at least 3 characters.</value>
   </data>
-  <data name="AddNew" xml:space="preserve">
-    <value>Thêm mới</value>
+  <data name="Slug_MaxLength" xml:space="preserve">
+    <value>URL can be up to 100 characters.</value>
   </data>
-  <data name="Address1" xml:space="preserve">
-    <value>Địa chỉ 1</value>
+  <data name="Slug_Valid" xml:space="preserve">
+    <value>Invalid URL. No special or accent characters allowed.</value>
   </data>
-  <data name="Address2" xml:space="preserve">
-    <value>Địa chỉ 2</value>
+  <data name="CroppedImageLogo_Required" xml:space="preserve">
+    <value>Please select a logo for the department.</value>
   </data>
-  <data name="AddSuccess" xml:space="preserve">
-    <value>Tạo thành công</value>
+  <data name="Name_Required" xml:space="preserve">
+    <value>Department name is required.</value>
   </data>
-  <data name="Apply" xml:space="preserve">
-    <value>Áp dụng</value>
+  <data name="Name_MinLength" xml:space="preserve">
+    <value>Department name is too short (minimum 2 characters).</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Trở về</value>
+  <data name="Name_MaxLength" xml:space="preserve">
+    <value>Department name is too long (maximum 255 characters).</value>
   </data>
-  <data name="Close" xml:space="preserve">
-    <value>Đóng</value>
+  <data name="Email_Required" xml:space="preserve">
+    <value>Email is required.</value>
   </data>
-  <data name="CouldNotConnectToServer." xml:space="preserve">
-    <value>Không thể kết nối đến máy chủ.</value>
+  <data name="Email_Invalid" xml:space="preserve">
+    <value>Invalid email address.</value>
   </data>
-  <data name="CropImage" xml:space="preserve">
-    <value>Cắt ảnh</value>
+  <data name="Email_MaxLength" xml:space="preserve">
+    <value>Email must not exceed 255 characters.</value>
   </data>
-  <data name="CropSize" xml:space="preserve">
-    <value>Kích thước cắt ảnh:</value>
+  <data name="PhoneNumber_Required" xml:space="preserve">
+    <value>Phone number is required.</value>
   </data>
-  <data name="Dashboard" xml:space="preserve">
-    <value>Bảng tin</value>
+  <data name="PhoneNumber_Digits" xml:space="preserve">
+    <value>Please enter digits only.</value>
   </data>
-  <data name="DeleteFail" xml:space="preserve">
-    <value>Xóa không thành công</value>
+  <data name="PhoneNumber_MinLength" xml:space="preserve">
+    <value>Phone number must be at least 9 digits.</value>
   </data>
-  <data name="DeleteSuccess" xml:space="preserve">
-    <value>Xóa thành công</value>
+  <data name="PhoneNumber_MaxLength" xml:space="preserve">
+    <value>Phone number must not exceed 15 digits.</value>
   </data>
-  <data name="FacebookAddress" xml:space="preserve">
-    <value>Địa chỉ FaceBook</value>
+  <data name="Address1_Required" xml:space="preserve">
+    <value>Main address is required.</value>
   </data>
-  <data name="Faculty" xml:space="preserve">
-    <value>Khoa</value>
+  <data name="Address1_MinLength" xml:space="preserve">
+    <value>Address is too short.</value>
   </data>
-  <data name="FacultyManagement" xml:space="preserve">
-    <value>Quản lý Khoa</value>
+  <data name="Address1_MaxLength" xml:space="preserve">
+    <value>Address must not exceed 255 characters.</value>
   </data>
-  <data name="InvalidInput" xml:space="preserve">
-    <value>Đầu vào không hợp lệ</value>
+  <data name="Address2_MaxLength" xml:space="preserve">
+    <value>Secondary address must not exceed 255 characters.</value>
   </data>
-  <data name="NameFaculty" xml:space="preserve">
-    <value>Tên khoa</value>
+  <data name="FacebookUrl_Invalid" xml:space="preserve">
+    <value>Invalid Facebook URL.</value>
   </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
+  <data name="FacebookUrl_MaxLength" xml:space="preserve">
+    <value>Facebook link must not exceed 255 characters.</value>
   </data>
-  <data name="NoteCrop" xml:space="preserve">
-    <value>Kéo và điều chỉnh khung để cắt ảnh theo kích thước</value>
+  <data name="WikipediaUrl_Invalid" xml:space="preserve">
+    <value>Invalid Wikipedia URL.</value>
   </data>
-  <data name="NotFound" xml:space="preserve">
-    <value>Không tìm thấy dữ liệu.</value>
+  <data name="WikipediaUrl_MaxLength" xml:space="preserve">
+    <value>Wikipedia link must not exceed 255 characters.</value>
   </data>
-  <data name="PhoneNumber" xml:space="preserve">
-    <value>Số điện thoại</value>
+  <data name="YoutubeUrl_Invalid" xml:space="preserve">
+    <value>Invalid Youtube URL.</value>
   </data>
-  <data name="PlaceholderAddress1" xml:space="preserve">
-    <value>Nhập địa chỉ 1</value>
+  <data name="YoutubeUrl_MaxLength" xml:space="preserve">
+    <value>Youtube link must not exceed 255 characters.</value>
   </data>
-  <data name="PlaceholderAddress2" xml:space="preserve">
-    <value>Nhập địa chỉ 2</value>
+  <data name="CroppedImage_Required" xml:space="preserve">
+    <value>Please select an image.</value>
   </data>
-  <data name="PlaceholderEmail" xml:space="preserve">
-    <value>Nhập email</value>
+  <data name="Slug_FormatRule" xml:space="preserve">
+    <value>Url can only contain lowercase letters, numbers, and hyphens (-).</value>
   </data>
-  <data name="PlaceholderFacebook" xml:space="preserve">
-    <value>Nhập địa chỉ facebook</value>
-  </data>
-  <data name="PlaceholderNameFaculty" xml:space="preserve">
-    <value>Nhập tên khoa</value>
-  </data>
-  <data name="PlaceholderPhoneNo" xml:space="preserve">
-    <value>Nhập số điện thoại</value>
-  </data>
-  <data name="PlaceholderSearchFaculty" xml:space="preserve">
-    <value>Tên khoa, url...</value>
-  </data>
-  <data name="PlaceholderUrl" xml:space="preserve">
-    <value>Nhập url</value>
-  </data>
-  <data name="PlaceholderWikipedia" xml:space="preserve">
-    <value>Nhập địa chỉ wikipedia</value>
-  </data>
-  <data name="PlaceholderYoutube" xml:space="preserve">
-    <value>Nhập địa chỉ Youtube</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>Lưu</value>
-  </data>
-  <data name="Saving" xml:space="preserve">
-    <value>Đang lưu...</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Tìm kiếm</value>
-  </data>
-  <data name="SelectImage" xml:space="preserve">
-    <value>Chọn ảnh</value>
-  </data>
-  <data name="SelectImageFile" xml:space="preserve">
-    <value>Chọn file ảnh</value>
-  </data>
-  <data name="UpdateFail" xml:space="preserve">
-    <value>Cập nhật thất bại</value>
-  </data>
-  <data name="UpdateSuccess" xml:space="preserve">
-    <value>Cập nhật thành công</value>
-  </data>
-  <data name="UrlAlreadyExists" xml:space="preserve">
-    <value>Url đã tồn tại</value>
-  </data>
-  <data name="WikipediaAddress" xml:space="preserve">
-    <value>Địa chỉ Wikipedia</value>
-  </data>
-  <data name="YoutubeAddress" xml:space="preserve">
-    <value>Địa chỉ Youtube</value>
+  <data name="AddDepartmentTitle" xml:space="preserve">
+    <value>Add new Faculty</value>
   </data>
 </root>

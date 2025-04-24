@@ -33,7 +33,7 @@
 
         // Handle btn-select-image click
         $('#btn-select-image').on('click', function () {
-            $('#image-input').click();
+            $('#image-input')[0].click();
         });
 
         // Handle image upload and cropping
@@ -78,7 +78,7 @@
                                     height: canvasData.width * (2039 / 243)
                                 });
                                 // Thông báo cho người dùng biết về kích thước crop
-                                $('#crop-dimensions').text('Kích thước crop: 2039 x 243');
+                                $('#crop-dimensions').text(localization.notificationCrop + ' 2039 x 243');
                             }
                         });
                     }, 300);
@@ -163,7 +163,7 @@
         //#region Handle Upload and Crop Image Logo
         // Handle btn-select-image click
         $('#btn-select-image-logo').on('click', function () {
-            $('#image-input-logo').click();
+            $('#image-input-logo')[0].click();
         });
         // Handle image upload and cropping
         let isCropLogoModalActive = false;
@@ -207,7 +207,7 @@
                                     height: canvasData.width * (2039 / 243)
                                 });
                                 // Thông báo cho người dùng biết về kích thước crop
-                                $('#crop-logo-dimensions').text('Kích thước crop: 250 x 250');
+                                $('#crop-logo-dimensions').text(localization.notificationCrop + '  250 x 250');
                             }
                         });
                     }, 300);
@@ -292,6 +292,8 @@
         // Handle add department click
         $('#btn-add-department').on('click', function () {
             clearForm();
+            $('#modalAddEditDepartment').find('.modal-title').text(localization.addDepartment);
+            $("#modalAddEditDepartment").validate().resetForm();
             $('#modalAddEditDepartment').modal('show');
         });
 
@@ -322,7 +324,7 @@
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
                 beforeSend: function () {
-                    $('#btn-save-department').prop('disabled', true).text('Đang lưu...');
+                    $('#btn-save-department').prop('disabled', true).text(localization.saving);
                 },
                 success: function (response) {
                     if (response.succeeded) {
@@ -334,10 +336,10 @@
                     }
                 },
                 error: function () {
-                    base.notify('Không thể kết nối đến máy chủ.', 'error');
+                    base.notify(localization.notificationErrorAjax, 'error');
                 },
                 complete: function () {
-                    $('#btn-save-department').prop('disabled', false).text('Lưu');
+                    $('#btn-save-department').prop('disabled', false).text(localization.save);
                 }
             });
 
@@ -349,7 +351,7 @@
     $.validator.addMethod("validSlug", function (value, element) {
         if (this.optional(element)) return true;
         return /^[a-z0-9\-]+$/.test(value);
-    }, "Slug chỉ được chứa chữ thường không dấu, số và dấu gạch ngang (-).");
+    }, localization.slugFormatRule);
     //#endregion
 
     //#region Handle Function validation form
@@ -413,52 +415,52 @@
             },
             messages: {
                 slug: {
-                    required: "Vui lòng nhập url.",
-                    minlength: "Url tối thiểu 3 ký tự.",
-                    maxlength: "Url tối đa 100 ký tự.",
-                    validSlug: "Url không hợp lệ. Không được chứa dấu hoặc ký tự đặc biệt."
+                    required: localization.slugRequired,
+                    minlength: localization.slugMinLength,
+                    maxlength: localization.slugMaxLength,
+                    validSlug: localization.slugValid
                 },
                 croppedImageLogo: {
-                    required: "Vui lòng chọn logo cho phòng ban.",
+                    required: localization.croppedImageLogoRequired
                 },
                 name: {
-                    required: "Tên phòng ban là bắt buộc.",
-                    minlength: "Tên phòng ban quá ngắn (tối thiểu 2 ký tự).",
-                    maxlength: "Tên phòng ban quá dài (tối đa 255 ký tự)."
+                    required: localization.nameRequired,
+                    minlength: localization.nameMinLength,
+                    maxlength: localization.nameMaxLength
                 },
                 email: {
-                    required: "Email là bắt buộc.",
-                    email: "Email không hợp lệ.",
-                    maxlength: "Email không được vượt quá 255 ký tự."
+                    required: localization.emailRequired,
+                    email: localization.emailInvalid,
+                    maxlength: localization.emailMaxLength
                 },
                 phoneNumber: {
-                    required: "Số điện thoại là bắt buộc.",
-                    digits: "Vui lòng chỉ nhập số.",
-                    minlength: "Số điện thoại tối thiểu 9 chữ số.",
-                    maxlength: "Số điện thoại tối đa 15 chữ số."
+                    required: localization.phoneNumberRequired,
+                    digits: localization.phoneNumberDigits,
+                    minlength: localization.phoneNumberMinLength,
+                    maxlength: localization.phoneNumberMaxLength
                 },
                 address1: {
-                    required: "Địa chỉ chính là bắt buộc.",
-                    minlength: "Địa chỉ quá ngắn.",
-                    maxlength: "Địa chỉ không được vượt quá 255 ký tự."
+                    required: localization.address1Required,
+                    minlength: localization.address1MinLength,
+                    maxlength: localization.address1MaxLength
                 },
                 address2: {
-                    maxlength: "Địa chỉ phụ không được vượt quá 255 ký tự."
+                    maxlength: localization.address2MaxLength
                 },
                 faceBookUrl: {
-                    url: "Đường dẫn Facebook không hợp lệ.",
-                    maxlength: "Link Facebook không vượt quá 255 ký tự."
+                    url: localization.facebookUrlInvalid,
+                    maxlength: localization.facebookUrlMaxLength
                 },
                 wikipediaUrl: {
-                    url: "Đường dẫn Wikipedia không hợp lệ.",
-                    maxlength: "Link Wikipedia không vượt quá 255 ký tự."
+                    url: localization.wikipediaUrlInvalid,
+                    maxlength: localization.wikipediaUrlMaxLength
                 },
                 youtubeUrl: {
-                    url: "Đường dẫn Youtube không hợp lệ.",
-                    maxlength: "Link Youtube không vượt quá 255 ký tự."
+                    url: localization.youtubeUrlInvalid,
+                    maxlength: localization.youtubeUrlMaxLength
                 },
                 croppedImage: {
-                    required: "Vui lòng chọn ảnh hiển thị.",
+                    required: localization.croppedImageRequired
                 }
             }
         });
@@ -474,6 +476,9 @@
                 keyword: $('#txtKeyword').val(),
                 pageSize: base.configs.pageSize,
                 pageNumber: base.configs.pageIndex
+            },
+            beforeSend: function () {
+                base.startLoading();
             },
             success: function (response) {
                 const template = $('#table-template').html();
@@ -501,6 +506,9 @@
             error: function (xhr, status, error) {
                 $('#tbl-content').html('<tr><td colspan="6" class="text-center text-danger">Không thể tải dữ liệu. Vui lòng thử lại.</td></tr>');
                 base.wrapPaging(1, loadData, isPageChanged);
+            },
+            complete: function () {
+                base.stopLoading();
             }
         });
     }
@@ -516,7 +524,7 @@
         $('#image-preview').attr('src', '/assets/images/2039x243.svg');
         $('#croppedImage').val('');
         document.getElementById('image-input').value = '';
-        document.querySelector('label[for="image-input"]').innerText = 'Chọn file ảnh';
+        document.querySelector('label[for="image-input"]').innerText = localization.selectImage;
         if (cropper) {
             cropper.destroy();
             cropper = null;
@@ -527,7 +535,7 @@
         $('#image-preview-logo').attr('src', '/assets/images/250x250.svg');
         $('#croppedImageLogo').val('');
         document.getElementById('image-input-logo').value = '';
-        document.querySelector('label[for="image-input-logo"]').innerText = 'Chọn file ảnh';
+        document.querySelector('label[for="image-input-logo"]').innerText = localization.selectImage;
         if (cropperLogo) {
             cropperLogo.destroy();
             cropperLogo = null;

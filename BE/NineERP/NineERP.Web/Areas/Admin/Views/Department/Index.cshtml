@@ -1,6 +1,8 @@
-﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResource> Translate
+@inject IViewLocalizer TranslateValidation
 @{
     ViewData["Title"] = Translate["FacultyManagement"];
     var breadcrumb = new List<(string Text, string Url)>
@@ -83,10 +85,45 @@
 
 @section Scripts {
     <script src="~/assets/libs/mustache/mustache.min.js" asp-append-version="true"></script>
-    <script src="~/assets/js/cropper.min.js" asp-append-version="true" ></script>
+    <script src="~/assets/js/cropper.min.js" asp-append-version="true"></script>
     <script src="~/admin-app/controllers/department/index.js" asp-append-version="true"></script>
     <script>
-         var departmentObj = new DepartmentController();
+        var localization = {
+            slugRequired: '@Html.Raw(TranslateValidation["Slug_Required"].Value)',
+            slugMinLength: '@Html.Raw(TranslateValidation["Slug_MinLength"].Value)',
+            slugMaxLength: '@Html.Raw(TranslateValidation["Slug_MaxLength"].Value)',
+            slugValid: '@Html.Raw(TranslateValidation["Slug_Valid"].Value)',
+            slugFormatRule: '@Html.Raw(TranslateValidation["Slug_FormatRule"].Value)',
+            croppedImageLogoRequired: '@Html.Raw(TranslateValidation["CroppedImageLogo_Required"].Value)',
+            nameRequired: '@Html.Raw(TranslateValidation["Name_Required"].Value)',
+            nameMinLength: '@Html.Raw(TranslateValidation["Name_MinLength"].Value)',
+            nameMaxLength: '@Html.Raw(TranslateValidation["Name_MaxLength"].Value)',
+            emailRequired: '@Html.Raw(TranslateValidation["Email_Required"].Value)',
+            emailInvalid: '@Html.Raw(TranslateValidation["Email_Invalid"].Value)',
+            emailMaxLength: '@Html.Raw(TranslateValidation["Email_MaxLength"].Value)',
+            phoneNumberRequired: '@Html.Raw(TranslateValidation["PhoneNumber_Required"].Value)',
+            phoneNumberDigits: '@Html.Raw(TranslateValidation["PhoneNumber_Digits"].Value)',
+            phoneNumberMinLength: '@Html.Raw(TranslateValidation["PhoneNumber_MinLength"].Value)',
+            phoneNumberMaxLength: '@Html.Raw(TranslateValidation["PhoneNumber_MaxLength"].Value)',
+            address1Required: '@Html.Raw(TranslateValidation["Address1_Required"].Value)',
+            address1MinLength: '@Html.Raw(TranslateValidation["Address1_MinLength"].Value)',
+            address1MaxLength: '@Html.Raw(TranslateValidation["Address1_MaxLength"].Value)',
+            address2MaxLength: '@Html.Raw(TranslateValidation["Address2_MaxLength"].Value)',
+            facebookUrlInvalid: '@Html.Raw(TranslateValidation["FacebookUrl_Invalid"].Value)',
+            facebookUrlMaxLength: '@Html.Raw(TranslateValidation["FacebookUrl_MaxLength"].Value)',
+            wikipediaUrlInvalid: '@Html.Raw(TranslateValidation["WikipediaUrl_Invalid"].Value)',
+            wikipediaUrlMaxLength: '@Html.Raw(TranslateValidation["WikipediaUrl_MaxLength"].Value)',
+            youtubeUrlInvalid: '@Html.Raw(TranslateValidation["YoutubeUrl_Invalid"].Value)',
+            youtubeUrlMaxLength: '@Html.Raw(TranslateValidation["YoutubeUrl_MaxLength"].Value)',
+            croppedImageRequired: '@Html.Raw(TranslateValidation["CroppedImage_Required"].Value)',
+            notificationCrop: '@Html.Raw(Translate["NoteCrop"].Value)',
+            notificationErrorAjax: '@Html.Raw(Translate["CouldNotConnectToServer."].Value)',
+            saving: '@Html.Raw(Translate["Saving"].Value)',
+            save: '@Html.Raw(Translate["Save"].Value)',
+            selectImage: '@Html.Raw(Translate["SelectImageFile"].Value)',
+            addDepartment: '@Html.Raw(TranslateValidation["AddDepartmentTitle"].Value)',
+        };
+        var departmentObj = new DepartmentController();
         departmentObj.initialize();
     </script>
     <script>
@@ -96,7 +133,7 @@
             if (fileName) {
                 $(this).next('.custom-file-label').html(fileName);
             } else {
-                $(this).next('.custom-file-label').html(@Translate["SelectImageFile"]);
+                $(this).next('.custom-file-label').html('@Html.Raw(Translate["SelectImageFile"])');
             }
         });
     </script>

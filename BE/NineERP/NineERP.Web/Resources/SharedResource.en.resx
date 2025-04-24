@@ -144,6 +144,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="CouldNotConnectToServer." xml:space="preserve">
+    <value>Could not connect to server.</value>
+  </data>
   <data name="CropImage" xml:space="preserve">
     <value>Crop image</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Saving...</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
