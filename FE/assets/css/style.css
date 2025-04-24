@@ -458,7 +458,7 @@ a {
 }
 
 .footer-copyright {
-  padding: 0px 12px 0px;
+  padding: 0 12px;
 }
 @media (max-width: 767px) {
   .footer-logo {
