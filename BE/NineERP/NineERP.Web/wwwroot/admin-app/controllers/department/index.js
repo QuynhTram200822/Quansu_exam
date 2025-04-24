@@ -322,9 +322,14 @@
                 logoUrl: $('#croppedImageLogo').val(),
                 bannerUrl: $('#croppedImage').val(),
             };
+            var urlAjax = '/admin/department/add';
+            // Check url ajax
+            if (formData.id != 0) {
+                urlAjax = '/admin/department/update';
+            }
 
             $.ajax({
-                url: '/admin/department/add',
+                url: urlAjax,
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
@@ -353,6 +358,28 @@
 
         });
         //#endregion Handle Add/Edit Department
+
+        //#region Handle Delete Department
+        // Handle delete department click
+        $('#tbl-content').on('click', '.btn-delete-department', function (e) {
+            const id = $(this).data('id');
+            Swal.fire({
+                title: localization.confirmDeleteTitle,
+                text: localization.confirmDeleteText,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: localization.yes,
+                cancelButtonText: localization.noButton
+            }).then(result => {
+                if (result.value) {
+                    $.post("/admin/department/delete", { id }, function (response) {
+                        base.notify(response.messages[0], response.succeeded ? 'success' : 'error');
+                        if (response.succeeded) loadData(true);
+                    });
+                }
+            });
+        });
+        //#endregion
     }
 
     //#region Custom validation method for slug

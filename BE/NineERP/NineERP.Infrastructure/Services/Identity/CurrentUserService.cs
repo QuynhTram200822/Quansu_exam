@@ -11,7 +11,7 @@ namespace NineERP.Infrastructure.Services.Identity
             var user = httpContextAccessor.HttpContext?.User;
 
             UserId = user?.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty;
-            UserName = user?.FindFirstValue("UserName") ?? string.Empty;
+            UserName = user?.FindFirstValue(ClaimTypes.Name) ?? string.Empty;
             Email = user?.FindFirstValue("Email") ?? string.Empty;
             FullName = user?.FindFirstValue("FullName") ?? string.Empty;
             RoleName = user?.FindFirstValue(ClaimTypes.Role) ?? string.Empty;

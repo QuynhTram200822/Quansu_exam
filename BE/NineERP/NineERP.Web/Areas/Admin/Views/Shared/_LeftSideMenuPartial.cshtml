@@ -1,7 +1,13 @@
 ﻿@using Microsoft.Extensions.Localization
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @inject IStringLocalizer<SharedResource> Translate
-
+@inject IAuthorizationService AuthorizationService
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using NineERP.Domain.Enums
+@{
+    var canViewFaculty = (await AuthorizationService.AuthorizeAsync(User, $"Permission:{PermissionValue.Faculties.View}")).Succeeded;
+}
 <div class="left-side-menu">
     <div class="slimscroll-menu">
         <div id="sidebar-menu">
@@ -23,7 +29,10 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a asp-controller="Department" asp-action="Index">@Translate["Faculty"]</a></li>
+                        @if (canViewFaculty)
+                        {
+                            <li><a asp-controller="Department" asp-action="Index">@Translate["Faculty"]</a></li>
+                        }
                         <li><a asp-controller="Users" asp-action="Index">@Localizer["Users"]</a></li>
                         <li><a asp-controller="Roles" asp-action="Index">@Localizer["Roles"]</a></li>
                         <li><a asp-controller="AuditLogs" asp-action="Index">@Localizer["AuditLogs"]</a></li>

@@ -58,5 +58,14 @@
             public const string Add = "EmailTemplatesAdd";
             public const string Delete = "EmailTemplatesDelete";
         }
+
+        public class Faculties
+        {
+            public const string View = "FacultiesView";
+            public const string Update = "FacultiesUpdate";
+            public const string Add = "FacultiesAdd";
+            public const string Delete = "FacultiesDelete";
+        }
+
     }
 }

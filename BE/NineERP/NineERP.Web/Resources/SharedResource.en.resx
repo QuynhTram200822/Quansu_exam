@@ -144,6 +144,12 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="ConfirmDeleteTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="CouldNotConnectToServer." xml:space="preserve">
     <value>Could not connect to server.</value>
   </data>
@@ -178,6 +184,9 @@
     <value>Name faculty</value>
   </data>
   <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoButton" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="NoResultsFound" xml:space="preserve">
@@ -251,6 +260,9 @@
   </data>
   <data name="WikipediaAddress" xml:space="preserve">
     <value>Wikipedia address</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="YoutubeAddress" xml:space="preserve">
     <value>Youtube address</value>

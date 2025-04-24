@@ -111,7 +111,7 @@ namespace NineERP.Web.Areas.Admin.Controllers
             return Ok(result);
         }
 
-        [HttpGet("/data/all-permissions")]
+        [HttpGet]
         [Authorize(Policy = $"Permission:{PermissionValue.Roles.View}")]
         public IActionResult GetAllPermissions()
         {

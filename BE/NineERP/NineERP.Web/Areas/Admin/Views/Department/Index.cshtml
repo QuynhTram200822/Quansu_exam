@@ -60,6 +60,10 @@
             updateDepartment: '@Html.Raw(TranslateValidation["UpdateDepartmentTitle"].Value)',
             noResultsFound: '@Html.Raw(Translate["NoResultsFound"].Value)',
             unableToLoadDataPleaseTryAgain: '@Html.Raw(Translate["UnableToLoadDataPleaseTryAgain"].Value)',
+            confirmDeleteTitle: '@Html.Raw(Translate["ConfirmDeleteTitle"].Value)',
+            confirmDeleteText: '@Html.Raw(Translate["ConfirmDeleteText"].Value)',
+            yes: '@Html.Raw(Translate["Yes"].Value)',
+            noButton: '@Html.Raw(Translate["NoButton"].Value)',
             };
         var departmentObj = new DepartmentController();
         departmentObj.initialize();
@@ -151,7 +155,7 @@
         <td>{{{Url}}}</td>
         <td class="text-center">
             <a href="#" class="btn btn-xs btn-info btn-edit-department" data-id="{{Id}}" data-name="{{Name}}"><i class="fe-edit-2"></i></a>
-            @* <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete"><i class="fe-trash-2"></i></a> *@
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete-department"><i class="fe-trash-2"></i></a>
         </td>
     </tr>
 </script>
