@@ -180,6 +180,9 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>No results found.</value>
+  </data>
   <data name="NoteCrop" xml:space="preserve">
     <value>Drag and adjust the frame to crop the photo to size</value>
   </data>
@@ -190,10 +193,10 @@
     <value>Phone number</value>
   </data>
   <data name="PlaceholderAddress1" xml:space="preserve">
-    <value>Enter address 2</value>
+    <value>Enter address 1</value>
   </data>
   <data name="PlaceholderAddress2" xml:space="preserve">
-    <value>Enter address 1</value>
+    <value>Enter address 2</value>
   </data>
   <data name="PlaceholderEmail" xml:space="preserve">
     <value>Enter email</value>
@@ -233,6 +236,9 @@
   </data>
   <data name="SelectImageFile" xml:space="preserve">
     <value>Select image file</value>
+  </data>
+  <data name="UnableToLoadDataPleaseTryAgain" xml:space="preserve">
+    <value>Unable to load data. Please try again.</value>
   </data>
   <data name="UpdateFail" xml:space="preserve">
     <value>Update failed</value>

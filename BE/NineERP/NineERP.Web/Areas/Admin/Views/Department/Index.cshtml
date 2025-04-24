@@ -14,73 +14,8 @@
 
 @section Styles
 {
-    <!-- CSS -->
     <link href="~/assets/js/cropper.min.css" rel="stylesheet" asp-append-version="true" />
-    <style>
-        <style >
-        /* CSS để xử lý tỉ lệ rộng */
-        .cropper-container {
-            max-width: 100% !important;
-        }
-
-        #crop-container {
-            height: 400px;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-            #crop-container img {
-                max-width: 100%;
-                display: block;
-            }
-
-        /* Điều chỉnh kích thước của cropper view */
-        .cropper-view-box {
-            outline: 1px solid #fff;
-            outline-color: rgba(255, 255, 255, 0.75);
-        }
-
-        /* Làm cho thanh công cụ cropper dễ nhìn hơn */
-        .cropper-point {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(49, 170, 222, 0.75);
-        }
-
-        /* Hiển thị ảnh preview tốt hơn */
-        #image-preview {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        #image-preview-logo {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        /* Thêm style cho thông tin kích thước */
-        #crop-dimensions {
-            font-size: 0.85rem;
-            color: #6c757d;
-            font-weight: normal;
-        }
-
-        .custom-file-label::after {
-            content: none !important;
-        }
-    </style>
+    <link href="~/admin-app/css/deparment.css" rel="stylesheet" asp-append-version="true" />
 }
 
 @section Scripts {
@@ -122,7 +57,10 @@
             save: '@Html.Raw(Translate["Save"].Value)',
             selectImage: '@Html.Raw(Translate["SelectImageFile"].Value)',
             addDepartment: '@Html.Raw(TranslateValidation["AddDepartmentTitle"].Value)',
-        };
+            updateDepartment: '@Html.Raw(TranslateValidation["UpdateDepartmentTitle"].Value)',
+            noResultsFound: '@Html.Raw(Translate["NoResultsFound"].Value)',
+            unableToLoadDataPleaseTryAgain: '@Html.Raw(Translate["UnableToLoadDataPleaseTryAgain"].Value)',
+            };
         var departmentObj = new DepartmentController();
         departmentObj.initialize();
     </script>
@@ -212,8 +150,8 @@
         <td>{{Email}}</td>
         <td>{{{Url}}}</td>
         <td class="text-center">
-            <a href="#" class="btn btn-xs btn-info btn-edit" data-id="{{Id}}" data-name="{{Name}}"><i class="fe-edit-2"></i></a>
-            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete"><i class="fe-trash-2"></i></a>
+            <a href="#" class="btn btn-xs btn-info btn-edit-department" data-id="{{Id}}" data-name="{{Name}}"><i class="fe-edit-2"></i></a>
+            @* <a href="#" data-id="{{Id}}" class="btn btn-xs btn-danger btn-delete"><i class="fe-trash-2"></i></a> *@
         </td>
     </tr>
 </script>

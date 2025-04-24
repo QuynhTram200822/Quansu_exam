@@ -180,6 +180,9 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>Không tìm thấy kết quả.</value>
+  </data>
   <data name="NoteCrop" xml:space="preserve">
     <value>Kéo và điều chỉnh khung để cắt ảnh theo kích thước</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="SelectImageFile" xml:space="preserve">
     <value>Chọn file ảnh</value>
+  </data>
+  <data name="UnableToLoadDataPleaseTryAgain" xml:space="preserve">
+    <value>Không thể tải dữ liệu. Vui lòng thử lại</value>
   </data>
   <data name="UpdateFail" xml:space="preserve">
     <value>Cập nhật thất bại</value>

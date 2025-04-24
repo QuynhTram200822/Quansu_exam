@@ -42,5 +42,14 @@ namespace NineERP.Web.Areas.Admin.Controllers
             var result = await mediator.Send(new GetDepartmentsPaginationQuery(request));
             return Json(result);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetById(short id)
+        {
+            var result = await mediator.Send(new GetDepartmentByIdQuery(id));
+            if (!result.Succeeded) return Json(new { succeeded = false, messages = result.Messages.FirstOrDefault() });
+
+            return Json(new { succeeded = true, data = result.Data });
+        }
     }
 }
