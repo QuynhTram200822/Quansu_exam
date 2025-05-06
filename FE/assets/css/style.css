@@ -28,7 +28,7 @@ body {
 /* Hero Section */
 .hero-section {
   position: relative;
-  min-height: 80vh;
+  min-height: 85vh;
   background: url("../img/qk5-building.jpg") center/cover no-repeat;
   overflow: hidden;
   display: flex;
@@ -43,11 +43,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.4)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 }
 
 .hero-content {
@@ -57,15 +53,16 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  transform: translateY(-8%);
 }
 
 .anniversary-text {
-  font-size: 4.2rem;
+  font-size: 3.2rem;
   color: #ffc857;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   animation: titleFadeIn 1.5s ease-out;
 }
@@ -99,7 +96,7 @@ body {
 
 /* Main Content Section */
 .main-content {
-  padding: 5rem 0;
+  /* padding: 5rem 0; */
   background: white;
 }
 
@@ -114,10 +111,10 @@ body {
 
 .intro-block {
   position: relative;
-  padding: 2rem;
+  /* padding: 2rem; */
   border-radius: 20px;
   background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); */
 }
 
 .intro-text {
@@ -130,6 +127,11 @@ body {
 
 .intro-text p:last-child {
   margin-bottom: 0;
+}
+.introduce-ctn {
+  transform: translateY(-23%);
+  z-index: 2;
+  padding-bottom: 20px;
 }
 
 /* Section Title */
@@ -171,8 +173,10 @@ body {
     transform: translateX(-50%);
   }
 }
-
 /* Rules Block */
+.rule-ctn {
+  /* margin-top: -10%; */
+}
 .rules-block {
   padding: 2rem 0;
 }
@@ -349,10 +353,10 @@ body {
   transition: all 0.5s ease;
 }
 
-.video-container:hover {
+/* .video-container:hover {
   transform: perspective(1000px) rotateY(-5deg);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
+} */
 
 .video-wrapper {
   position: relative;
@@ -412,6 +416,110 @@ body {
   font-size: 2.5rem;
   margin-left: 8px;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 991px) {
+  .introduce-ctn {
+    transform: none;
+  }
+  .content-block {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 450px) {
+  .content-block {
+    margin-top: 1.5rem;
+  }
+}
+/* Ranking  */
+.ranking-ctn {
+  margin-top: -5%;
+}
+.top-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-color);
+}
+
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.medal-img {
+  width: 32px;
+}
+
+.medal {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.score {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.top-1 {
+  transform: translateY(-20px);
+}
+@media (max-width: 769px) {
+  .top-three-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 auto;
+  }
+
+  .top-item {
+    width: 100% !important;
+    margin: 5px auto !important;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .top-item .avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .top-item .medal {
+    order: -1;
+  }
+  .top-item .score {
+    order: 3;
+    margin-left: auto;
+  }
+
+  .top-item .name,
+  .top-item .score {
+    font-size: 1rem;
+  }
+  .top-1 {
+    order: 1;
+    transform: none;
+  }
+
+  .top-2 {
+    order: 2;
+  }
+
+  .top-3 {
+    order: 3;
+  }
 }
 
 /* Rules Card */
@@ -628,9 +736,9 @@ body {
     margin-top: 0.8rem;
   }
 
-  .main-content {
+  /* .main-content {
     padding: 3rem 0;
-  }
+  } */
 
   .intro-text {
     padding-right: 0;
@@ -810,7 +918,7 @@ body {
   flex: 1;
   background: #f8f9fa;
   border-radius: 8px;
-  border: 2px solid #f8f9fa;
+  border: 2px solid var(--primary-color);
   transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .step-wrapper::before {
